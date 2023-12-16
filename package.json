@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/svwoodhouse/squid-react-component.git"
+    "url": "git+https://github.com/svwoodhouse/squid-react-components.git"
   },
   "author": "svwoodhouse",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/svwoodhouse/squid-react-component/issues"
+    "url": "https://github.com/svwoodhouse/squid-react-components/issues"
   },
-  "homepage": "https://github.com/svwoodhouse/squid-react-component#readme",
+  "homepage": "https://github.com/svwoodhouse/squid-react-components#readme",
   "devDependencies": {
     "@babel/preset-react": "^7.23.3",
     "@rollup/plugin-babel": "^6.0.4",
