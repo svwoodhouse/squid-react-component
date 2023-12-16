@@ -1,11 +1,13 @@
 {
-  "name": "squid-react-component",
+  "name": "squid-react-components",
   "version": "1.0.0",
   "description": "A bunch of tailwind styled react components",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "storybook dev -p 6006",
+    "build": "rollup --config",
     "build-storybook": "storybook build"
   },
   "repository": {
@@ -19,6 +21,11 @@
   },
   "homepage": "https://github.com/svwoodhouse/squid-react-component#readme",
   "devDependencies": {
+    "@babel/preset-react": "^7.23.3",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
     "@storybook/addon-essentials": "^7.6.4",
     "@storybook/addon-interactions": "^7.6.4",
     "@storybook/addon-links": "^7.6.4",
@@ -27,14 +34,21 @@
     "@storybook/react": "^7.6.4",
     "@storybook/react-vite": "^7.6.4",
     "@storybook/test": "^7.6.4",
+    "autoprefixer": "^10.4.16",
     "classnames": "^2.3.2",
+    "postcss": "^8.4.32",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "rollup": "^4.9.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
     "storybook": "^7.6.4",
-    "autoprefixer": "^10.4.16",
-    "postcss": "^8.4.32",
     "tailwind-merge": "^2.1.0",
     "tailwindcss": "^3.3.6"
+  },
+  "peerDependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   }
 }
