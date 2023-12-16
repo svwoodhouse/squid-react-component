@@ -1,1 +1,1 @@
-# squid-react-component
+# squid-react-components
