@@ -1,40 +1,39 @@
 import babel from '@rollup/plugin-babel';
 import resolve from '@rollup/plugin-node-resolve';
-import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import external from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss'
 import commonjs from '@rollup/plugin-commonjs';
 import terser from '@rollup/plugin-terser';
+import packageJson from './package.json' assert {type: 'json'};
 
-const config = {
+export default [{
   input: './src/index.js',
   output: [
     {
-      file: 'dist/index.es.js',
-      format: 'es',
-      exports: 'named'
+      file: packageJson.main,
+      format: 'cjs',
+      sourcemap: true,
+      name: 'squid-react-components'
     },
     {
-      file: 'dist/index.js',
-      format: 'cjs',
-    }
+      file: packageJson.module,
+      format: 'esm',
+      sourcemap: true
+  }
 ],
   plugins: [
-    peerDepsExternal(),
-    resolve(
-      {
-        extensions: ['.js', '.jsx', '.ts', '.tsx']
-      }
-    ),
-    commonjs(),
+    external(),
+    resolve(),
+    commonjs({ include: ['node_modules/**'] }),
     babel({ 
         exclude: '/node_modules/**', 
-        presets:['@babel/preset-react'], 
+        presets:[["@babel/preset-react", {"runtime": "automatic"}]], 
+        extensions: [".js", ".ts", ".jsx", ".tsx"],
         babelHelpers: 'bundled' }),
     postcss({
         plugins:[],
         minimize: true
     }),
     terser()]
-};
-
-export default config;
+}
+]
