@@ -23,11 +23,11 @@ export default [{
 ],
   plugins: [
     external(),
-    resolve(),
+    resolve({ extensions: ['.jsx', '.js', '.tsx'] }),
     commonjs({ include: ['node_modules/**'] }),
     babel({ 
         exclude: '/node_modules/**', 
-        presets:[["@babel/preset-react", {"runtime": "automatic"}]], 
+        presets:["@babel/preset-env",["@babel/preset-react", {"runtime": "automatic"}]], 
         extensions: [".js", ".ts", ".jsx", ".tsx"],
         babelHelpers: 'bundled' }),
     postcss({
