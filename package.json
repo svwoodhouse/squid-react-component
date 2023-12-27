@@ -1,6 +1,6 @@
 {
   "name": "squid-react-components",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A bunch of tailwind styled react components",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.es.js",
