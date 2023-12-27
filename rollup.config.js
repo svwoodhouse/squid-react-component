@@ -34,6 +34,7 @@ export default [{
         plugins:[],
         minimize: true
     }),
-    terser()]
+    terser()],
+    external: ["react", "react-dom"]
 }
 ]
