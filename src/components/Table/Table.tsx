@@ -1,5 +1,8 @@
+import React from "react"
 import { Fragment } from "react"
-const Table = ({ data, config, keyFn }) => {
+import { TableProps } from "./TableProps"
+
+const Table = ({ data, config, keyFn } :TableProps<object>) => {
     const renderedRows = data.map((rowData) => {
         const renderedCells = config.map((column) => {
             return (

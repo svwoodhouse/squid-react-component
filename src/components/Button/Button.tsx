@@ -1,5 +1,7 @@
 import className from 'classnames';
 import { twMerge } from 'tailwind-merge'
+import { ButtonProps } from './ButtonProps';
+import React from 'react';
 
 const Button = ({
     children, 
@@ -11,7 +13,7 @@ const Button = ({
     outline, 
     rounded,
     ...rest
-}) => {
+}: ButtonProps) => {
     const classes = twMerge(className(rest.className, 'flex items-center px-3 py-1.5 border',{
         'border-blue-500 bg-blue-500 text-white': primary,
         'border-gray-900 bg-gray-900 text-white': secondary,

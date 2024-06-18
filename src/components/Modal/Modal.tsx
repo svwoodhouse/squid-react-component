@@ -1,7 +1,9 @@
+import React from "react"
 import { useEffect } from "react"
 import ReactDOM from "react-dom"
+import { ModalProps } from "./ModalProps"
 
-const Modal =  ({onClose, children, actionBar}) => {
+const Modal =  ({onClose, children, actionBar}: ModalProps) => {
     useEffect(()=>{
         document.body.classList.add('overflow-hidden')
 
@@ -9,6 +11,7 @@ const Modal =  ({onClose, children, actionBar}) => {
             document.body.classList.remove('overflow-hidden')
         }
     },[])
+    
     return ReactDOM.createPortal(
         <div>
             <div onClick={onClose} className="fixed inset-0 bg-gray-300 opacity-80"></div>

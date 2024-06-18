@@ -1,10 +1,12 @@
 import { useState, useEffect, useRef } from 'react';
 import { GoChevronDown } from 'react-icons/go'
 import Panel from '../Panel'
+import { DropdownProps } from './DropdownProps';
+import React from 'react';
 
-const Dropdown = ({ options, value, onChange}) => {
+const Dropdown = ({ options = [], value, onChange}: DropdownProps) => {
     const [isOpen, setIsOpen] = useState(false)
-    const divRef = useRef()
+    const divRef = useRef<HTMLDivElement>(null)
 
     const handleClick = () => {
         setIsOpen(!isOpen)

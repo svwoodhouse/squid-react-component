@@ -1,8 +1,10 @@
 import { GoTriangleUp, GoTriangleDown } from 'react-icons/go'
 import Table from "../Table/Table";
 import useSort from '../../hooks/use-sort';
+import { SortableTableProps } from './SortableTableProps';
+import React from 'react';
 
-const SortableTable = (props) => {
+const SortableTable = (props: SortableTableProps<object>) => {
     const { config, data } = props;
     const {sortedData, sortBy, sortOrder, setSortColumn} = useSort(data, config)
 
